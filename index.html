@@ -84,21 +84,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> 去年,多看做活动,内容是关注”海淀公共文化”的微信公众号,输入”书香海淀多看阅读”,公众号会返回一个畅读卡密码,然后在多看活动页面把密码和账号绑定,就有一年的畅读特权,获取了两个,一个当时就激活了,还有一个还没用.</p>
-<p> 前几天,想到第二张激活码快过期了,翻了翻,激活码倒是找到了,可是,当时多看的激活网址没记下,快一年多了,倒是忘了.本以为这个活动,网上知道的人挺多的,搜索了下,网上全部都是活动描述信息,但是关于激活网站的地址始终没找到.</p>
-<p> 后来,在贴吧里面看到了一个<a href="http://tieba.baidu.com/p/4113694486" target="_blank" rel="external">帖子</a>,截图留下了当时的活动时间,然后在打开”海淀公共文化”的公众号,查看历史信息,令人吐血的是,10号和11号的信息都存在,就是至关重要9号的畅读卡活动的信息没有了,吐血.</p>
-<p> <img src="https://cloud.githubusercontent.com/assets/7932380/16807123/dd867542-4949-11e6-934e-7a614a9c43c0.png" alt=""></p>
-<p> 仔细看了下图片,虽然图片里面的激活网址是一半,剩余一半虽然只有上半部分,但大部分是可以辨别的,当时猜了猜,应该是下面这个网址:<br> <a href="http://www.duokan.com/subtle/event/redeem_haidian/dict/index.html" target="_blank" rel="external">http://www.duokan.com/subtle/event/redeem_haidian/dict/index.html</a>,打开后,事实证明我的猜测是错误的.</p>
-<p> 现在也就是dict这块不确定,干脆写了个程序,遍历了url.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">'use strict';</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> child_process = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span>  paramsStr=[];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="string">"a"</span>.charCodeAt(<span class="number">0</span>);i&lt;=<span class="string">"z"</span>.charCodeAt(<span class="number">0</span>);i++)&#123;</div><div class="line">    paramsStr.push(<span class="built_in">String</span>.fromCharCode(i));</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> tpl = <span class="string">'www.duokan.com/subtle/event/redeem_haidian/dict/index.html'</span>;</div><div class="line"><span class="keyword">let</span> testUrlList = [];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;paramsStr.length;i++)&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;paramsStr.length;j++) &#123;</div><div class="line">        testUrlList.push(tpl.replace(<span class="string">'dict'</span>,<span class="string">'di'</span>+paramsStr[i]+paramsStr[j]));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;testUrlList.length;i++)&#123;</div><div class="line">    <span class="keyword">var</span> d=child_process.execSync(<span class="string">'curl '</span>+testUrlList[i]);</div><div class="line">    <span class="keyword">if</span>(d.indexOf(<span class="string">'302'</span>)&lt;<span class="number">0</span>)&#123;</div><div class="line">        <span class="built_in">console</span>.log(testUrlList[i]);</div><div class="line">        process.exit(<span class="number">0</span>);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">console</span>.error(<span class="string">"not found"</span>+testUrlList[i]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>顺便贴下最后的输出结果：<br><img src="https://cloud.githubusercontent.com/assets/7932380/16807443/01abd038-494b-11e6-98e9-9bc564961ce1.png" alt=""></p>
-<p>瀑布汗，居然是dist，反正没想到是这个.</p>
-<p>最后， 激活网址是<a href="http://www.duokan.com/subtle/event/redeem_haidian/dist/index.html" target="_blank" rel="external">http://www.duokan.com/subtle/event/redeem_haidian/dist/index.html</a></p>
-<p>GET IT.</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2016/07/13/多看书香海淀畅读卡的激活网址/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/13/多看书香海淀畅读卡的激活网址/" data-id="ciqkxr13a0000j931qhgpmcsz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/13/多看书香海淀畅读卡的激活网址/" data-id="ciql0gxvv0001mk31bmsi569t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -113,7 +107,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/07/13/hello-world/" class="article-date">
-  <time datetime="2016-07-13T01:01:44.415Z" itemprop="datePublished">2016-07-13</time>
+  <time datetime="2016-07-13T13:00:00.000Z" itemprop="datePublished">2016-07-13</time>
 </a>
     
   </div>
@@ -132,22 +126,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/13/hello-world/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/13/hello-world/" data-id="ciqkxr13h0001j931lhl45ns7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/13/hello-world/" data-id="ciql0gxvr0000mk31lu5v1orp" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -167,7 +159,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
     </div>
   </div>
 
@@ -177,7 +169,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a>
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a>
     </div>
   </div>
 
