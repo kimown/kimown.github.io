@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>openshift搭建应用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="恩，最后感谢openshift,aliyun友情提供。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openshift搭建应用">
+<meta property="og:url" content="http://yoursite.com/2016/08/13/openshift搭建应用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="恩，最后感谢openshift,aliyun友情提供。">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17831726/7a94b83e-6723-11e6-9c5c-5a800d06cba6.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17831733/b200f198-6723-11e6-9e02-49d27825b7a3.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17831740/0c8acf8a-6724-11e6-9f81-14307bd6df6f.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17831789/8cc6c0c2-6725-11e6-9c0b-73b8c1366964.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17831799/fd2a0536-6725-11e6-9a1f-ad16cafc71a9.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17832039/89ceafa4-672c-11e6-9b33-f5cfc123b232.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17832137/58500688-672e-11e6-98ac-f08b35bfd956.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7932380/17832233/5c0e9ad0-6730-11e6-8c8b-d5c5920decc0.png">
+<meta property="og:updated_time" content="2016-08-20T15:56:19.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="openshift搭建应用">
+<meta name="twitter:description" content="恩，最后感谢openshift,aliyun友情提供。">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/7932380/17831726/7a94b83e-6723-11e6-9c5c-5a800d06cba6.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-openshift搭建应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/13/openshift搭建应用/" class="article-date">
+  <time datetime="2016-08-13T03:08:05.000Z" itemprop="datePublished">2016-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      openshift搭建应用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>恩，最后感谢openshift,aliyun友情提供。</p>
+<a id="more"></a>
+<h2 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h2><p>首先在openshift上添加一个应用,然后选择自定义应用。<br><img src="https://cloud.githubusercontent.com/assets/7932380/17831726/7a94b83e-6723-11e6-9c5c-5a800d06cba6.png" alt=""><br><img src="https://cloud.githubusercontent.com/assets/7932380/17831733/b200f198-6723-11e6-9e02-49d27825b7a3.png" alt=""><br>修改Public URL的为自定义的名字，然后点击Create Application，注意下这里创建的速度的很慢,一个字:等<br><img src="https://cloud.githubusercontent.com/assets/7932380/17831740/0c8acf8a-6724-11e6-9f81-14307bd6df6f.png" alt=""></p>
+<h2 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h2><p>创建应用完毕后，按照页面指示clone,添加一个package.json文件,commit,push一份demo代码到openshift.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> ssh://<span class="variable">$&#123;YOUR CUSTOM PATH&#125;</span>/~/git/node.git/</div><div class="line"><span class="built_in">cd</span> node/</div><div class="line">npm init -y</div><div class="line">git add package.json</div><div class="line">git commit -m <span class="string">'My changes'</span></div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p><img src="https://cloud.githubusercontent.com/assets/7932380/17831789/8cc6c0c2-6725-11e6-9c0b-73b8c1366964.png" alt=""><br>此时页面是这样，注意页面html源代码在diy目录下的index.html<br><img src="https://cloud.githubusercontent.com/assets/7932380/17831799/fd2a0536-6725-11e6-9a1f-ad16cafc71a9.png" alt=""></p>
+<h2 id="创建一个express应用"><a href="#创建一个express应用" class="headerlink" title="创建一个express应用"></a>创建一个express应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd diy/</div><div class="line">npm i ejs --save</div><div class="line">npm i express --save</div><div class="line">touch index.js</div></pre></td></tr></table></figure>
+<p>index.js的代码是<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by kimown on 16-8-13.</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> pkgjson = <span class="built_in">require</span>(<span class="string">'./package.json'</span>);</div><div class="line">app.set(<span class="string">'port'</span>, (process.env.PORT || <span class="number">5000</span>));</div><div class="line"></div><div class="line">app.use(express.static(__dirname + <span class="string">'/public'</span>));</div><div class="line"></div><div class="line"><span class="comment">// views is directory for all template files</span></div><div class="line">app.set(<span class="string">'views'</span>, __dirname + <span class="string">'/views'</span>);</div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>);</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">    response.json(&#123;</div><div class="line">        alinode:process.alinode,</div><div class="line">        version:process.version,</div><div class="line">        pkgjson:pkgjson.name</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//  Get the environment variables we need.</span></div><div class="line"><span class="keyword">var</span> ipaddr  = process.env.OPENSHIFT_DIY_IP||<span class="string">'127.0.0.1'</span>;</div><div class="line"><span class="keyword">var</span> port    = process.env.OPENSHIFT_DIY_PORT || <span class="number">8080</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//  And start the app on that interface (and port).</span></div><div class="line">app.listen(port, ipaddr, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'%s: Node (version: %s) %s started on %s:%d ...'</span>, <span class="built_in">Date</span>(<span class="built_in">Date</span>.now() ), process.version, process.argv[<span class="number">1</span>], ipaddr, port);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这里的代码逻辑很简单，主要是读取openshift预设值的环境变量得到ip和port，然后打印出node的版本，可以使用 node index.js 本地查看。</p>
+<h2 id="hook-openshift启动应用进程"><a href="#hook-openshift启动应用进程" class="headerlink" title="hook openshift启动应用进程"></a>hook openshift启动应用进程</h2><p>在<a href="https://blog.openshift.com/a-paas-that-runs-anything-http-getting-started-with-diy-applications-on-openshift/" target="_blank" rel="external">这篇文章</a>，介绍了如何启动应用的过程，是通过使用<br>.openshift/action_hooks目录下start和stop两个可执行文件实现启动应用，停止应用的，里面没有什么神秘的，里面都是预设置的shell脚本文件。</p>
+<p>依葫芦画瓢修改两个可执行文件<br>start<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment"># The logic to start up your application should be put in this</span></div><div class="line"><span class="comment"># script. The application will work only if it binds to</span></div><div class="line"><span class="comment"># $OPENSHIFT_DIY_IP:8080</span></div><div class="line"><span class="comment">#nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |&amp; /usr/bin/logshifter -tag diy &amp;</span></div><div class="line">npm install</div><div class="line">nohup node <span class="variable">$OPENSHIFT_REPO_DIR</span>/index.js &amp;</div></pre></td></tr></table></figure></p>
+<p>stop<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="built_in">source</span> <span class="variable">$OPENSHIFT_CARTRIDGE_SDK_BASH</span></div><div class="line"></div><div class="line"><span class="comment"># The logic to stop your application should be put in this script.</span></div><div class="line"><span class="comment">#if [ -z "$(ps -ef | grep testrubyserver.rb | grep -v grep)" ]</span></div><div class="line"><span class="comment">#then</span></div><div class="line"><span class="comment">#    client_result "Application is already stopped"</span></div><div class="line"><span class="comment">#else</span></div><div class="line"><span class="comment">#    kill `ps -ef | grep testrubyserver.rb | grep -v grep | awk '&#123; print $2 &#125;'` &gt; /dev/null 2&gt;&amp;1</span></div><div class="line"><span class="comment">#fi</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$(ps -ef | grep index.js | grep -v grep)</span>"</span> ]</div><div class="line"><span class="keyword">then</span></div><div class="line">    client_result <span class="string">"Application is already stopped"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="built_in">kill</span> `ps -ef | grep index.js | grep -v grep | awk <span class="string">'&#123; print $2 &#125;'</span>` &gt; /dev/null 2&gt;&amp;1</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure></p>
+<p>注意这里我们需要设置npm的位置，因为在openshift里面，我们没有root权限，唯一可以持久化文件的目录是$OPENSHIFT_DATA_DIR这个目录,如果想在其他目录操作会报权限不足这个错误,<br>详细的各个环境变量的文档,<a href="https://developers.openshift.com/managing-your-applications/environment-variables.html" target="_blank" rel="external">点击这里</a>.<br><img src="https://cloud.githubusercontent.com/assets/7932380/17832039/89ceafa4-672c-11e6-9b33-f5cfc123b232.png" alt=""><br><img src="https://cloud.githubusercontent.com/assets/7932380/17832137/58500688-672e-11e6-98ac-f08b35bfd956.png" alt=""></p>
+<p>所以，start文件需要修改,指定npm的一些目录,在<a href="https://docs.npmjs.com/files/npmrc" target="_blank" rel="external">npm文档</a>描述了，.npmrc文件的4种位置，<br>那我们在package.json目录下创建.npmrc和.npm文件就可以避免没有权限问题了。<br>start的代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment"># The logic to start up your application should be put in this</span></div><div class="line"><span class="comment"># script. The application will work only if it binds to</span></div><div class="line"><span class="comment"># $OPENSHIFT_DIY_IP:8080</span></div><div class="line"><span class="comment">#nohup $OPENSHIFT_REPO_DIR/diy/testrubyserver.rb $OPENSHIFT_DIY_IP $OPENSHIFT_REPO_DIR/diy |&amp; /usr/bin/logshifter -tag diy &amp;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">export</span> npm_config_cache=<span class="variable">$OPENSHIFT_REPO_DIR</span>/diy/.npm</div><div class="line"><span class="built_in">export</span> npm_config_userconfig=<span class="variable">$OPENSHIFT_REPO_DIR</span>/diy/.npmrc</div><div class="line"></div><div class="line"><span class="built_in">cd</span> <span class="variable">$OPENSHIFT_REPO_DIR</span>/diy</div><div class="line">npm install</div><div class="line">nohup node <span class="variable">$OPENSHIFT_REPO_DIR</span>/index.js &amp;</div></pre></td></tr></table></figure></p>
+<p><img src="https://cloud.githubusercontent.com/assets/7932380/17832233/5c0e9ad0-6730-11e6-8c8b-d5c5920decc0.png" alt=""><br>这里可以看到是由于node自身的版本太低了,ejs找不到对应可用的版本，那只能使用自定义node的版本了，下面一篇文章我会讲到使用alinode来启动应用.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/13/openshift搭建应用/" data-id="cis3das7r000095316g2ho6ri" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/14/译-理解GC，解决Node-js内存泄露问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          译:理解GC，解决Node.js内存泄露问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/09/移动web蒙层下滚动问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">移动web蒙层下滚动问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/译/">译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/译/" style="font-size: 15px;">译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/16/译-一个有趣的JavaScript内存泄露情况/">译-一个有趣的JavaScript内存泄露情况</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/14/译-理解GC，解决Node-js内存泄露问题/">译:理解GC，解决Node.js内存泄露问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/13/openshift搭建应用/">openshift搭建应用</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/09/移动web蒙层下滚动问题/">移动web蒙层下滚动问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/07/f8app内部数据展示/">f8app内部数据展示</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

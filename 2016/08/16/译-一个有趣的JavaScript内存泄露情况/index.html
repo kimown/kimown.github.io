@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Hexo</title>
+  <title>译-一个有趣的JavaScript内存泄露情况 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2016/page/2/index.html">
+  <meta name="description" content="原文: http://info.meteor.com/blog/an-interesting-kind-of-javascript-memory-leak
+//TODO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="译-一个有趣的JavaScript内存泄露情况">
+<meta property="og:url" content="http://yoursite.com/2016/08/16/译-一个有趣的JavaScript内存泄露情况/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原文: http://info.meteor.com/blog/an-interesting-kind-of-javascript-memory-leak
+//TODO">
+<meta property="og:updated_time" content="2016-08-16T14:24:01.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="译-一个有趣的JavaScript内存泄露情况">
+<meta name="twitter:description" content="原文: http://info.meteor.com/blog/an-interesting-kind-of-javascript-memory-leak
+//TODO">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -57,83 +64,59 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/13/多看书香海淀畅读卡的激活网址/" class="archive-article-date">
-  <time datetime="2016-07-13T13:41:27.000Z" itemprop="datePublished">Jul 13</time>
+        <section id="main"><article id="post-译-一个有趣的JavaScript内存泄露情况" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/16/译-一个有趣的JavaScript内存泄露情况/" class="article-date">
+  <time datetime="2016-08-16T14:07:21.000Z" itemprop="datePublished">2016-08-16</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/13/多看书香海淀畅读卡的激活网址/">多看书香海淀畅读卡的激活网址</a>
+    <h1 class="article-title" itemprop="name">
+      译-一个有趣的JavaScript内存泄露情况
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/13/博客chagelog/" class="archive-article-date">
-  <time datetime="2016-07-13T13:00:01.000Z" itemprop="datePublished">Jul 13</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/13/博客chagelog/">博客chagelog</a>
-    </h1>
-  
+        <p>原文: <a href="http://info.meteor.com/blog/an-interesting-kind-of-javascript-memory-leak" target="_blank" rel="external">http://info.meteor.com/blog/an-interesting-kind-of-javascript-memory-leak</a></p>
+<pre><code>//TODO
+</code></pre> <a id="more"></a>
+<p>最近， Avi和David在追踪一个在Metror实时HTML模板渲染系统的内存泄露问题。这将会在0.6.5 release版本修复(现在QA的最后阶段)</p>
+<p>我在网上用　javascript闭包内存泄露作为关键词搜索，结果没找到任何相关的信息，所以看起来是JavaScript上下文的一个相对少见的问题。(所能查找到的信息，大多关于在IE老版本中糟糕的GC算法，但是这个问题却影响我现在安装的所以Chrome浏览器)。<br>之后我找到了一个由V8开发者的<a href="http://mrale.ph/blog/2012/09/23/grokking-v8-closures-for-fun.html" target="_blank" rel="external">文章</a>,但看起来现在大部分JavaScript开发者并不知道他们需要小心这个问题。</p>
+<p>JavaScript是一个函数编程语言，它的函数都是封闭的：函数对象可以接触到它们作用域里面的变量，即使这个作用域结束了。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/13/hello-world/" class="archive-article-date">
-  <time datetime="2016-07-13T13:00:00.000Z" itemprop="datePublished">Jul 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/13/hello-world/">Hello World</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/16/译-一个有趣的JavaScript内存泄露情况/" data-id="cis38qup9000iq231m00eiun7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译/">译</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/archives/2016/">&laquo; Prev</a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span>
-  </nav>
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/14/译-理解GC，解决Node-js内存泄露问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">译:理解GC，解决Node.js内存泄露问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
