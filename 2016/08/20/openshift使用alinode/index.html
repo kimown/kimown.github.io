@@ -57,9 +57,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kimown.github.io"></form>
@@ -90,7 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> <a href="https://kimown.github.io/2016/08/13/openshift%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8/" target="_blank" rel="external">衔接上文</a></p>
+        <p> <a href="https://kimown.github.io/2016/08/13/openshift%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8/">衔接上文</a></p>
 <a id="more"></a>
 <h2 id="安装alinode"><a href="#安装alinode" class="headerlink" title="安装alinode"></a>安装alinode</h2><p>下面是在openshift里面自定义使用alinode作为启动应用的版本，整体的思路很简单，看了下<a href="https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh" target="_blank" rel="external">install.sh</a>的代码，大致意思是在$HOME目录下创建一个.tnvm目录，然后git下载对应的代码,最终运行的tnvm命令在<a href="https://github.com/aliyun-node/tnvm/blob/master/tnvm.sh" target="_blank" rel="external">tnvm.sh</a>。那我们只要把$OPENSHIFT_DATA_DIR目录作为$HOME目录就可以了。</p>
 <p><img src="https://cloud.githubusercontent.com/assets/7932380/17834611/9ccd5b24-677b-11e6-8564-fa4b79fc3d0b.png" alt=""></p>
@@ -103,13 +103,13 @@
 <p><img src="https://cloud.githubusercontent.com/assets/7932380/17834822/c38bc382-6784-11e6-8034-d575334da976.png" alt=""></p>
 <p>红框里面是 tnvm.sh<a href="https://github.com/aliyun-node/tnvm/blob/master/tnvm.sh#L755" target="_blank" rel="external">755行</a>,$HOME和$OPENSHIFT_DATA_DIR不相等导致的，一个办法是直接修改tnvm.sh里面的$HOME目录为$OPENSHIFT_DATA_DIR，但不修改的话也不影响使用。<br>下面是使用alinode的版本，对应上面代码16行，然后 echo $(node -v) 打印出alinode对应的node的版本号，对应上面代码17行，<a href="https://alinode.aliyun.com/doc/alinode_versions" target="_blank" rel="external">详细对应版本参考</a></p>
 <p>如果出现下面的输出，说明代码已经成功运行在openshift上面了<br><img src="https://cloud.githubusercontent.com/assets/7932380/17834865/6cabb746-6786-11e6-9574-c8e52d4b8f68.png" alt=""></p>
-<p>打开<a href="https://node-kimown.rhcloud.com/" target="_blank" rel="external">https://node-kimown.rhcloud.com/</a>,输出结果<br><img src="https://cloud.githubusercontent.com/assets/7932380/17834872/ccd07fe4-6786-11e6-80df-043a2bbf9e48.png" alt=""><br>对应 <a href="https://kimown.github.io/2016/08/13/openshift%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8/" target="_blank" rel="external">openshift搭建应用</a>里面express的代码<br><img src="https://cloud.githubusercontent.com/assets/7932380/17834883/349beed8-6787-11e6-9340-2e8ac430af12.png" alt=""></p>
+<p>打开<a href="https://node-kimown.rhcloud.com/" target="_blank" rel="external">https://node-kimown.rhcloud.com/</a>,输出结果<br><img src="https://cloud.githubusercontent.com/assets/7932380/17834872/ccd07fe4-6786-11e6-80df-043a2bbf9e48.png" alt=""><br>对应 <a href="https://kimown.github.io/2016/08/13/openshift%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8/">openshift搭建应用</a>里面express的代码<br><img src="https://cloud.githubusercontent.com/assets/7932380/17834883/349beed8-6787-11e6-9340-2e8ac430af12.png" alt=""></p>
 <p>EOF</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/20/openshift使用alinode/" data-id="cisbu88et00063831cvub1tyr" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/20/openshift使用alinode/" data-id="cisbv7xgx0008sy31gns617to" class="article-share-link">Compartir</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -121,7 +121,7 @@
 <nav id="article-nav">
   
     <a href="/2016/08/23/加快create-react-app的下载速度/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Nuevo</strong>
       <div class="article-nav-title">
         
           加快create-react-app的下载速度
@@ -131,7 +131,7 @@
   
   
     <a href="/2016/08/16/译-一个有趣的JavaScript内存泄露情况/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Viejo</strong>
       <div class="article-nav-title">译-一个有趣的JavaScript内存泄露情况</div>
     </a>
   
@@ -159,7 +159,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nube de Tags</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/React/" style="font-size: 16.67px;">React</a> <a href="/tags/Tools/" style="font-size: 10px;">Tools</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/译/" style="font-size: 13.33px;">译</a>
     </div>
@@ -168,7 +168,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archivos</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
     </div>
@@ -178,7 +178,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Posts recientes</h3>
     <div class="widget">
       <ul>
         
@@ -215,7 +215,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 kimown<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
@@ -237,6 +237,20 @@
 
 
 <script src="/js/script.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//o4jiepyc4.qnssl.com/analytics.js','ga');
+
+    ga('create', 'UA-83215567-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 
