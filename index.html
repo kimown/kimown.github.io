@@ -81,29 +81,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用chrome搜索关键字时时，经常出现这一种 Did you mean to got {<a href="http://**}" target="_blank" rel="external">http://**}</a> 的提示，超级烦人。<br><img src="https://cloud.githubusercontent.com/assets/7932380/18192123/c90a387e-7103-11e6-80c4-d68ceb5e23ec.png" alt=""></p>
-<p><img src="https://cloud.githubusercontent.com/assets/7932380/18192171/62fab40e-7104-11e6-9a82-942ff9863cfe.png" alt=""></p>
-<p>具体的现象是：在chrome搜索框输入关键字后，搜索框有一端莫名奇妙的提示，点击提示链接后，有很明显的页面跳转行为，然后重定向到一个 悠悠导航 的网站<br><img src="https://cloud.githubusercontent.com/assets/7932380/18192193/a3f87928-7104-11e6-96a1-26432cfddf0c.png" alt=""></p>
-<p>根据<a href="https://www.quora.com/How-can-I-get-Chrome-to-stop-asking-Did-you-mean-to-go-to" target="_blank" rel="external">quora</a>和<a href="https://productforums.google.com/forum/#!topic/chrome/LGepU6tPPWs" target="_blank" rel="external">google论坛</a>的两篇讨论的内容，<br>当我搜索 lookup 这个关键词后，chrome会对这个关键字进行以此dns查询。但是，ips运营商会为了展示自定义的错误页面或者广告页面，会返回一个统一的错误的地址。我们使用Node.js的dns模块可以看到错误地址的具体ip。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</div><div class="line"></div><div class="line">dns.lookup(<span class="string">'lookup'</span>, (err, addresses, family) =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'addresses:'</span>, addresses);</div></pre></td></tr></table></figure>
-<p><img src="https://cloud.githubusercontent.com/assets/7932380/18192466/10c57022-7107-11e6-9d40-44c96cd0d14d.png" alt="">，从查询结果我们可以看到返回的ip地址是 202.102.110.203 ，当点击 Did you mean to got {<a href="http://**}" target="_blank" rel="external">http://**}</a> 里面的具体链接后，<br>chrome会直接访问这个ip地址，对应上面代码里面dns lookup的查询结果。（但是这个具体的域名 <a href="http://look/" target="_blank" rel="external">http://look/</a> 怎么出来的，没搞清楚，但应该是和ip地址一起返回的？？）</p>
-<p><img src="https://cloud.githubusercontent.com/assets/7932380/18192500/7507f5fa-7107-11e6-83d6-d8c701aa0984.png" alt="">,看下响应里面的代码,恩，做了代码压缩,一些js方法的使用值得学习下。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> sa = <span class="string">"http://202.102.110.207:8080/"</span>; <span class="keyword">var</span> pp = <span class="string">"108&amp;pre="</span>+(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime();</div><div class="line"><span class="keyword">var</span> s=<span class="built_in">String</span>(<span class="built_in">window</span>.location.href); <span class="keyword">var</span> host=<span class="built_in">escape</span>(s.substring(<span class="number">7</span>,s.indexOf(<span class="string">'/'</span>,<span class="number">7</span>)));</div><div class="line"><span class="keyword">var</span> ref=<span class="built_in">escape</span>(<span class="built_in">document</span>.referrer); <span class="keyword">var</span> su = s+<span class="string">"&amp;host="</span>+host+<span class="string">"&amp;refer="</span>+ref+<span class="string">"&amp;server="</span>+pp;</div><div class="line">s = <span class="built_in">escape</span>(s); <span class="function"><span class="keyword">function</span> <span class="title">loadfr</span>(<span class="params"></span>)</span>&#123; <span class="built_in">document</span>.getElementById(<span class="string">"fr1"</span>).src = sa+<span class="string">"3.htm?AIMT="</span>+su; &#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">refreshPage</span>(<span class="params"></span>)</span>&#123; <span class="built_in">document</span>.location = sa+<span class="string">"2.htm?AIMT="</span>+su; &#125;</div><div class="line"><span class="keyword">if</span> (self.location == top.location)&#123; <span class="built_in">document</span>.location= sa+<span class="string">"1.htm?AIMT="</span>+su; &#125;</div><div class="line"><span class="keyword">else</span> &#123; refreshPage(); &#125;<span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="tag">&lt;<span class="name">frameset</span> <span class="attr">rows</span>=<span class="string">"*,0"</span>&gt;</span><span class="tag">&lt;<span class="name">frame</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">src</span>=<span class="string">""</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">frame</span> <span class="attr">id</span>=<span class="string">"fr1"</span> <span class="attr">src</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">frameset</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><img src="https://cloud.githubusercontent.com/assets/7932380/18192580/2aa62260-7108-11e6-97b6-40c52b4d1e82.png" alt=""></p>
-<p>代码里面有一个refreshPage方法，意思是如果是内嵌iframe类型的，会跳转到另外的一个地址，不过这种类型的跳转没见过，不知道在哪种场景会用到。</p>
-<p>最后跳转的是类似 <a href="http://202.102.110.207:8080/1.htm?AIMT=http://look/&amp;host=look&amp;refer=&amp;server=108&amp;pre=1472787468116" target="_blank" rel="external">http://202.102.110.207:8080/1.htm?AIMT=http://look/&amp;host=look&amp;refer=&amp;server=108&amp;pre=1472787468116</a> 这样的地址，用postman看下响应，</p>
-<p><img src="https://cloud.githubusercontent.com/assets/7932380/18192973/9e289fc6-710b-11e6-81d6-cca098a679d5.png" alt="">.</p>
-<p>用curl模拟下浏览器行为，此时后台根据不同请求来源输出不同的响应，这里是302暂时重定向，最终指向的不是长长的带有ip地址的url，而是直接 悠悠导航 的域名。</p>
-<p><img src="https://cloud.githubusercontent.com/assets/7932380/18193238/2953c7fe-710e-11e6-82de-fd466a514757.png" alt=""><br> 就是上面看到的 悠悠导航。</p>
-<p> 有个问题也没有搞清楚：</p>
-<ul>
-<li><a href="http://look/" target="_blank" rel="external">http://look/</a> 是怎么出来的</li>
-</ul>
-<p>最终的解决方案，修改本机的dns，<a href="https://developers.google.com/speed/public-dns/docs/using?csw=1" target="_blank" rel="external">修改方法</a>，其实最好的方法是直接投诉运营商。</p>
-
+        <p>用chrome搜索关键字时时，经常出现这一种 Did you mean to got {<a href="http://**}">http://**}</a> 的提示，超级烦人。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/02/isp流量劫持/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/09/02/isp流量劫持/" data-id="cisl88ate00086c31a63y9ocs" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/09/02/isp流量劫持/" data-id="cislb908f00085y31kvr4ftft" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tool/">Tool</a></li></ul>
@@ -146,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/27/reinstall-ubuntu14-配置环境/" data-id="cisl88ato000h6c31ku1ura8w" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/27/reinstall-ubuntu14-配置环境/" data-id="cislb908o000h5y31uwyfdidp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -189,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/24/修改hexo主题landscape思路/" data-id="cisl88atw000m6c31iapt1ksb" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/24/修改hexo主题landscape思路/" data-id="cislb908s000m5y31wh1fqqui" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -232,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/23/加快create-react-app的下载速度/" data-id="cisl88aty000p6c31jaumr26a" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/23/加快create-react-app的下载速度/" data-id="cislb908u000p5y31pj92qhkt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -275,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/20/openshift使用alinode/" data-id="cisl88atf000b6c318qb9uw5q" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/20/openshift使用alinode/" data-id="cislb908g000b5y31k4rz8ug6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -320,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/16/译-一个有趣的JavaScript内存泄露情况/" data-id="cisl88aur00136c317582h6q3" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/16/译-一个有趣的JavaScript内存泄露情况/" data-id="cislb9096000w5y315s452jva" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译/">译</a></li></ul>
@@ -365,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/14/译-理解GC，解决Node-js内存泄露问题/" data-id="cisl88aus00156c31ftvp71wz" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/14/译-理解GC，解决Node-js内存泄露问题/" data-id="cislb9097000z5y31wfvos07y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译/">译</a></li></ul>
@@ -408,7 +395,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/13/openshift搭建应用/" data-id="cisl88atj000d6c31sip0fngz" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/13/openshift搭建应用/" data-id="cislb908k000d5y31h9c4xzft" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -451,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/09/移动web蒙层下滚动问题/" data-id="cisl88aup00116c31rm5gn2v4" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/09/移动web蒙层下滚动问题/" data-id="cislb9095000u5y31g83x7xva" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
@@ -494,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/08/07/f8app内部数据展示/" data-id="cisl88at600046c31skvvs3mt" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/07/f8app内部数据展示/" data-id="cislb908900045y31pkrefpfo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
