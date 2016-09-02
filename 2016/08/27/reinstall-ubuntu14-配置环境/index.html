@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>react-native填坑 | Kimown&#39;s Blog</title>
+  <title>reinstall ubuntu14,配置环境 | Kimown&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录下刚开始接触react-native遇到的一些问题">
+  <meta name="description" content="//TODO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-native填坑">
-<meta property="og:url" content="https://kimown.github.io/2016/07/30/react-native填坑/index.html">
+<meta property="og:title" content="reinstall ubuntu14,配置环境">
+<meta property="og:url" content="https://kimown.github.io/2016/08/27/reinstall-ubuntu14-配置环境/index.html">
 <meta property="og:site_name" content="Kimown's Blog">
-<meta property="og:description" content="记录下刚开始接触react-native遇到的一些问题">
-<meta property="og:updated_time" content="2016-07-30T12:45:36.861Z">
+<meta property="og:description" content="//TODO">
+<meta property="og:updated_time" content="2016-08-27T12:15:06.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-native填坑">
-<meta name="twitter:description" content="记录下刚开始接触react-native遇到的一些问题">
+<meta name="twitter:title" content="reinstall ubuntu14,配置环境">
+<meta name="twitter:description" content="//TODO">
   
     <link rel="alternate" href="/atom.xml" title="Kimown&#39;s Blog" type="application/atom+xml">
   
@@ -61,10 +61,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-react-native填坑" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-reinstall-ubuntu14-配置环境" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/30/react-native填坑/" class="article-date">
-  <time datetime="2016-07-30T09:19:01.000Z" itemprop="datePublished">2016-07-30</time>
+    <a href="/2016/08/27/reinstall-ubuntu14-配置环境/" class="article-date">
+  <time datetime="2016-08-27T05:56:15.000Z" itemprop="datePublished">2016-08-27</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      react-native填坑
+      reinstall ubuntu14,配置环境
     </h1>
   
 
@@ -83,27 +83,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>记录下刚开始接触react-native遇到的一些问题</p>
+        <p>//TODO</p>
  <a id="more"></a>
-<h2 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h2><p>使用react-native-cli初始化AwesomeProject项目时，会使用npm安装第三方依赖，会从<a href="http://npmjs.com/" target="_blank" rel="external">npm官方</a>下载，这里我们改用<a href="https://cnpmjs.org/" target="_blank" rel="external">cnpm镜像</a>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">google@H:/tmp$ <span class="built_in">which</span> react-native</div><div class="line">/home/mdk/node/bin/react-native</div><div class="line">google@H:/tmp$ ll /home/mdk/node/bin/react-native</div><div class="line">lrwxrwxrwx 1 google google 45  6月 18 10:44 /home/mdk/node/bin/react-native -&gt; ../lib/node_modules/react-native-cli/index.js*</div><div class="line">google@H:/tmp$ <span class="built_in">cd</span> /home/mdk/node/lib/node_modules/react-native-cli/</div><div class="line">google@H:/home/mdk/node/lib/node_modules/react-native-cli$ l</div><div class="line">index.js*  node_modules/  package.json  README.md</div><div class="line">google@H:/home/mdk/node/lib/node_modules/react-native-cli$ vi index.js</div></pre></td></tr></table></figure>
-<p>这里看下react-native-cli代码，详细模式<br>运行npm在<a href="https://github.com/facebook/react-native/blob/master/react-native-cli/index.js#L232" target="_blank" rel="external">232行</a>，<br>由源代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> proc = spawn(<span class="string">'npm'</span>, [<span class="string">'install'</span>, <span class="string">'--verbose'</span>, <span class="string">'--save'</span>, <span class="string">'--save-exact'</span>, getInstallPackage(rnPackage)], &#123;stdio: <span class="string">'inherit'</span>&#125;);</div></pre></td></tr></table></figure>
-<p>修改为</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> proc = spawn(<span class="string">'npm'</span>, [<span class="string">'install'</span>,<span class="string">'--registry=https://registry.npm.taobao.org'</span>, <span class="string">'--verbose'</span>, <span class="string">'--save'</span>, <span class="string">'--save-exact'</span>, getInstallPackage(rnPackage)], &#123;stdio: <span class="string">'inherit'</span>&#125;);</div></pre></td></tr></table></figure>
-<p>正常模式运行npm在<a href="https://github.com/facebook/react-native/blob/master/react-native-cli/index.js#L216" target="_blank" rel="external">216行</a>，<br>由源代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec(<span class="string">'npm install --save --save-exact '</span> + getInstallPackage(rnPackage), <span class="function"><span class="keyword">function</span>(<span class="params">e, stdout, stderr</span>) </span>&#123;</div></pre></td></tr></table></figure>
-<p>修改为</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">exec(<span class="string">'npm install --save --save-exact --registry=https://registry.npm.taobao.org '</span> + getInstallPackage(rnPackage), <span class="function"><span class="keyword">function</span>(<span class="params">e, stdout, stderr</span>) </span>&#123;</div></pre></td></tr></table></figure>
-<h2 id="null-is-not-an-object-evaluating-‘this-state-showText’"><a href="#null-is-not-an-object-evaluating-‘this-state-showText’" class="headerlink" title="null is not an object(evaluating ‘this.state.showText’)"></a>null is not an object(evaluating ‘this.state.showText’)</h2><p>虽然react hot实现了热更新，但是例如我在constructor中添加了一个state的属性值，保存后，页面热更新，会报上面的提示信息的错误。<br>原先：react-native的热更新无法替换整个state，无法实时反馈state的变化<br>解决方法：手动Reload页面</p>
-
+<p>昨天看到了深度看图V1.0，看样子linux下能看的软件又多了一个，由于深度没有提供二进制包，只能自己源码安装，结果被那复杂的依赖关系搞蒙了头，装了它的一堆依赖，结果还是报错，怒摔键盘，不想浪费时间折腾它了。结果今天早上一起来，开机后，发现触摸板失灵，情况是鼠标只悬浮在桌面中央，无论怎么操作都不能移动。网上搜了一堆资料，无果。只能重装下ubuntu系统。</p>
+<h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure>
+<h2 id="修改源地址"><a href="#修改源地址" class="headerlink" title="修改源地址"></a>修改源地址</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo mv /etc/apt/sources.list /etc/apt/sources.list.old</div><div class="line">sudo touch /etc/apt/sources.list</div><div class="line"> vi /etc/apt/sources.list</div></pre></td></tr></table></figure>
+<p>填入下面内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</div><div class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</div><div class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</div></pre></td></tr></table></figure>
+<p>后执行   sudo apt-get update</p>
+<h2 id="alinode-cnpm"><a href="#alinode-cnpm" class="headerlink" title="alinode cnpm"></a>alinode cnpm</h2><h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><h2 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h2><h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h2 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h2><h2 id="webstorm-idea"><a href="#webstorm-idea" class="headerlink" title="webstorm  idea"></a>webstorm  idea</h2><h2 id="vmware安装osx虚拟机"><a href="#vmware安装osx虚拟机" class="headerlink" title="vmware安装osx虚拟机"></a>vmware安装osx虚拟机</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/07/30/react-native填坑/" data-id="cisl88atm000e6c313hy8bzub" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/08/27/reinstall-ubuntu14-配置环境/" data-id="cisl88ato000h6c31ku1ura8w" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -111,19 +106,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/30/ubuntu技巧/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/09/02/isp流量劫持/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ubuntu技巧.md
+          isp流量劫持
         
       </div>
     </a>
   
   
-    <a href="/2016/07/23/blog主题的修改内容/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/08/24/修改hexo主题landscape思路/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">blog主题的修改内容</div>
+      <div class="article-nav-title">修改hexo主题landscape思路</div>
     </a>
   
 </nav>
