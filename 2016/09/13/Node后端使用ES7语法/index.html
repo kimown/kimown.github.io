@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>blog主题的修改内容 | Kimown&#39;s Blog</title>
+  <title>Node后端使用ES7语法 | Kimown&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="代码的修改逻辑">
+  <meta name="description" content="前端由于webpack和babel的结合使用，已经可以广泛的使用最新的ES6和ES7特性，但是在服务器端，当然可以编写ES6语法,然后通过打包代码到ES5的方式来运行，但是这样做的话会出现问题debug会很麻烦。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="blog主题的修改内容">
-<meta property="og:url" content="https://kimown.github.io/2016/07/23/blog主题的修改内容/index.html">
+<meta property="og:title" content="Node后端使用ES7语法">
+<meta property="og:url" content="https://kimown.github.io/2016/09/13/Node后端使用ES7语法/index.html">
 <meta property="og:site_name" content="Kimown's Blog">
-<meta property="og:description" content="代码的修改逻辑">
-<meta property="og:updated_time" content="2016-08-24T04:03:27.824Z">
+<meta property="og:description" content="前端由于webpack和babel的结合使用，已经可以广泛的使用最新的ES6和ES7特性，但是在服务器端，当然可以编写ES6语法,然后通过打包代码到ES5的方式来运行，但是这样做的话会出现问题debug会很麻烦。">
+<meta property="og:updated_time" content="2016-09-14T04:29:02.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog主题的修改内容">
-<meta name="twitter:description" content="代码的修改逻辑">
+<meta name="twitter:title" content="Node后端使用ES7语法">
+<meta name="twitter:description" content="前端由于webpack和babel的结合使用，已经可以广泛的使用最新的ES6和ES7特性，但是在服务器端，当然可以编写ES6语法,然后通过打包代码到ES5的方式来运行，但是这样做的话会出现问题debug会很麻烦。">
   
     <link rel="alternate" href="/atom.xml" title="Kimown&#39;s Blog" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-blog主题的修改内容" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Node后端使用ES7语法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/07/23/blog主题的修改内容/" class="article-date">
-  <time datetime="2016-07-23T14:35:46.000Z" itemprop="datePublished">2016-07-23</time>
+    <a href="/2016/09/13/Node后端使用ES7语法/" class="article-date">
+  <time datetime="2016-09-13T11:43:54.000Z" itemprop="datePublished">2016-09-13</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      blog主题的修改内容
+      Node后端使用ES7语法
     </h1>
   
 
@@ -85,41 +85,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="代码的修改逻辑"><a href="#代码的修改逻辑" class="headerlink" title="代码的修改逻辑"></a>代码的<a href="https://github.com/kimown/blog/blob/master/themes/auto-update-theme-fs.js" target="_blank" rel="external">修改逻辑</a></h2> <a id="more"></a>
-<ul>
-<li><p>2016-08-24 11:02</p>
-<ul>
-<li>google公共库地址为<a href="http://libs.useso.com/" target="_blank" rel="external">360CDN服务</a>,但不支持https，作罢</li>
-<li>修改google公共库地址为<a href="https://servers.ustclug.org/2014/06/blog-googlefonts-speedup/" target="_blank" rel="external">科大加速服务</a>,修改文件：<a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/layout/_partial/head.ejs#L32" target="_blank" rel="external">head.ejs</a>,<a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/layout/_partial/after-footer.ejs#L17" target="_blank" rel="external">after-footer.ejs</a></li>
-<li>修改fontawesome-webfont<a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/source/css/_variables.styl#L29" target="_blank" rel="external">路径</a>为<a href="http://www.bootcdn.cn/font-awesome/" target="_blank" rel="external">cdn</a>，不走github pages</li>
-</ul>
-</li>
-<li><p>2016-08-23 22:24</p>
-<ul>
-<li>去除横幅背景图片，在<a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/source/css/_variables.styl#L39" target="_blank" rel="external">_variables.styl</a>去除</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>2016-08-24 21:01<ul>
-<li>修改了landscape的背景色，在<a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/source/css/_variables.styl#L10" target="_blank" rel="external">_variables.styl</a>,将背景色修改为<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a>主页的颜色</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">color</span>-background = <span class="number">#eee</span></div></pre></td></tr></table></figure>
-<p>修改成<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">color</span>-background = <span class="number">#171f26</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>在<a href="https://github.com/hexojs/hexo-theme-landscape/blob/master/source/css/style.styl#L65" target="_blank" rel="external">style.styl</a>去除背景色的赋值</li>
-</ul>
-<p>　</p>
+        <p>前端由于webpack和babel的结合使用，已经可以广泛的使用最新的<a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">ES6</a>和<a href="http://babeljs.io/docs/plugins/preset-es2017/" target="_blank" rel="external">ES7</a>特性，但是在服务器端，当然可以编写ES6语法,然后通过打包代码到ES5的方式来运行，但是这样做的话会出现问题debug会很麻烦。</p>
+ <a id="more"></a>
+<h2 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node</h2><p> 之前看过f8app导入<a href="https://github.com/fbsamples/f8app/blob/master/scripts/import-data-from-parse.js" target="_blank" rel="external">mongodb数据库</a>的小脚本，里面使用了await和async语法，其实最终是通过使用了<a href="https://babeljs.io/docs/usage/cli/" target="_blank" rel="external">babel-node</a>启动的，但是官方也说明了内存占用高，不适合用于生产环境，但是写写小程序的话极为方便。</p>
+<p> 在<a href="https://github.com/babel/babel/releases/tag/v6.14.0" target="_blank" rel="external">babel v6.14.0</a>中,出现了一个新的preset:<a href="https://babeljs.io/docs/plugins/preset-latest/" target="_blank" rel="external">babel-preset-latest</a>,可以解析ES2015, ES2016, ES2017语法，真的是很方便的一个包。</p>
+<p>这是babel的使用<a href="http://babeljs.io/docs/plugins/preset-latest/" target="_blank" rel="external">教程</a>,我就用fs模块写了一个小<a href="https://github.com/kimown/gist/tree/master/babel-present-latest/babel-node" target="_blank" rel="external">demo</a>;</p>
+<p>由于我使用的是alinode,所以这里还需要给node做一个软链接，否则会报错: /usr/bin/env: node: No such file or directory,<a href="http://stackoverflow.com/questions/30281057/node-forever-usr-bin-env-node-no-such-file-or-directory" target="_blank" rel="external">解决方法</a>:给alinode做一个软连接。</p>
+<p>现在说下babel-node结合WebStorm进行断点调试的功能，我现在WebStorm的版本是2016.2.2。我的建议是全局安装babel-cli,<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --global babel-cli</div></pre></td></tr></table></figure></p>
+<p>然后让Node interpreter:　指向全局安装的babel-node的位置：~/.tnvm/versions/alinode/v1.6.0/lib/node_modules/babel-cli/bin/babel-node.js　，然后右键，Debug ‘${File Name}’　即可。如果全部安装的babel-node的版本和package.json里面的babel-node的版本不一致，那就把Node interpreter: 的路径指向node_modules里面 ${ProjectPath}/node_modules/babel-cli/bin/babel-node.js 的位置。</p>
+<h2 id="require-hook"><a href="#require-hook" class="headerlink" title="require-hook"></a>require-hook</h2><p>  另外一种是使用babel提供的require-hook方法，源于我在stackoverflow看到的<a href="http://stackoverflow.com/questions/29170589/debug-nodejs-es6-app-webstorm" target="_blank" rel="external">一篇回复</a>，里面介绍使用引入 ‘babel/register’这个库来debug程序,这篇回复的日期是15年3月份，现在babel官方已经使用babel-register这个新的库来代替，只能说前端发展太迅速了，很多学习的内容转眼间就outdated。</p>
+<p>  整体思路来自于<a href="http://stackoverflow.com/a/35002082/5074324" target="_blank" rel="external">这篇回复</a>，但是这个回复不怎么简洁，自己又重新组织了下代码，上面一样又是一个fs的小<a href="https://github.com/kimown/gist/tree/master/babel-present-latest/babel-register" target="_blank" rel="external">demo</a></p>
+<p>这篇文章的核心全部在上面两个小demo上，以上，EOF</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/07/23/blog主题的修改内容/" data-id="cit1evfjo00046e31gz5h8eee" class="article-share-link">Share</a>
+      <a data-url="https://kimown.github.io/2016/09/13/Node后端使用ES7语法/" data-id="cit1evfjd00006e317v577ehj" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -127,19 +111,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/30/react-native填坑/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          react-native填坑
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/23/chrome二维码扩展/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/09/10/PyCon2016感想/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">chrome二维码扩展</div>
+      <div class="article-nav-title">PyCon2016感想</div>
     </a>
   
 </nav>
