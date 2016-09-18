@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Tool | Kimown&#39;s Blog</title>
+  <title>使用jigdo下载ubuntu镜像 | Kimown&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Kimown's Blog">
-<meta property="og:url" content="https://kimown.github.io/tags/Tool/index.html">
+  <meta name="description" content="ubuntu14 ISO镜像的增量下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用jigdo下载ubuntu镜像">
+<meta property="og:url" content="https://kimown.github.io/2016/09/18/使用jigdo下载ubuntu镜像/index.html">
 <meta property="og:site_name" content="Kimown's Blog">
+<meta property="og:description" content="ubuntu14 ISO镜像的增量下载">
+<meta property="og:updated_time" content="2016-09-18T06:42:56.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kimown's Blog">
+<meta name="twitter:title" content="使用jigdo下载ubuntu镜像">
+<meta name="twitter:description" content="ubuntu14 ISO镜像的增量下载">
   
     <link rel="alternate" href="/atom.xml" title="Kimown&#39;s Blog" type="application/atom+xml">
   
@@ -59,59 +63,72 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/02/isp流量劫持/" class="archive-article-date">
-  <time datetime="2016-09-02T03:49:57.000Z" itemprop="datePublished">Sep 2</time>
+        <section id="main"><article id="post-使用jigdo下载ubuntu镜像" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/18/使用jigdo下载ubuntu镜像/" class="article-date">
+  <time datetime="2016-09-18T05:32:06.000Z" itemprop="datePublished">2016-09-18</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/02/isp流量劫持/">isp流量劫持</a>
+    <h1 class="article-title" itemprop="name">
+      使用jigdo下载ubuntu镜像
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/23/chrome二维码扩展/" class="archive-article-date">
-  <time datetime="2016-07-23T13:40:24.000Z" itemprop="datePublished">Jul 23</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/23/chrome二维码扩展/">chrome二维码扩展</a>
-    </h1>
-  
+        <p> ubuntu14 ISO镜像的增量下载</p>
+ <a id="more"></a>
+<p> 今天在知乎上看到一篇<a href="https://zhuanlan.zhihu.com/p/22383854" target="_blank" rel="external">jigdo增量下载debian的文章</a>，当有老的ISO镜像时，增量下载可以大大的减少下载时间.</p>
+<p>jigdo的<a href="http://atterer.org/jigdo/#how" target="_blank" rel="external">官方地址</a>，上面说支持debian和fedora,但是我想要下载的是ubuntu，而且<a href="http://mirrors.aliyun.com/ubuntu-releases/14.04.5/" target="_blank" rel="external">下载页面</a>也有.jigdo文件．</p>
+<p>这里我用ubuntu-14.04.4-server-i386.iso和ubuntu-14.04.5-server-i386.iso为例,[下载地址].<br>可以看到，ubuntu-14.04.4-server-i386.iso 大小近583M,ubuntu-14.04.5-server-i386.iso近623M，两个镜像的.jigdo地址是：</p>
+<p><a href="http://mirrors.aliyun.com/ubuntu-releases/14.04/ubuntu-14.04.4-server-i386.jigdo" target="_blank" rel="external">http://mirrors.aliyun.com/ubuntu-releases/14.04/ubuntu-14.04.4-server-i386.jigdo</a><br><a href="http://mirrors.aliyun.com/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-i386.jigdo" target="_blank" rel="external">http://mirrors.aliyun.com/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-i386.jigdo</a></p>
+<h2 id="安装jigdo"><a href="#安装jigdo" class="headerlink" title="安装jigdo"></a>安装jigdo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">https://help.ubuntu.com/community/JigdoDownloadHowto</div><div class="line">jigdo-lite</div></pre></td></tr></table></figure>
+<p>下载完毕后，是这几个文件．<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jigdo-file-cache.db  ubuntu-14.04.4-server-i386.iso.list  ubuntu-14.04.4-server-i386.iso.tmp  ubuntu-14.04.4-server-i386.jigdo  ubuntu-14.04.4-server-i386.template</div></pre></td></tr></table></figure></p>
+<p>恩，jigdo下载ubuntu后没有办法合并，下载失败了．</p>
+<p>结论：ubuntu镜像还是使用老办法wget直接http下载吧，如果想要下载debian还是可以用一用jigdo的．</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kimown.github.io/2016/09/18/使用jigdo下载ubuntu镜像/" data-id="cit8i4txc000yny31xnt1mmoq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/18/hangman代码整体思路/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hangman代码整体思路
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2016/09/16/小米max刷国际版/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">小米max刷国际版</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
