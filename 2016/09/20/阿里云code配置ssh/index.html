@@ -5,19 +5,16 @@
   
   <title>阿里云code配置ssh | Kimown&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天无意在网络上发现了阿里云Code，这是在GitLab进行再开发的，所以一些使用体验和内网部署的GitLab是一致的．
-生成SSH key参考GitHub这篇文章　Generating a new SSH key and adding it to the ssh-agent - User Documentation1234567891011121314151617181920212223go">
+  <meta name="description" content="阿里云Code">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云code配置ssh">
 <meta property="og:url" content="https://kimown.github.io/2016/09/20/阿里云code配置ssh/index.html">
 <meta property="og:site_name" content="Kimown's Blog">
-<meta property="og:description" content="今天无意在网络上发现了阿里云Code，这是在GitLab进行再开发的，所以一些使用体验和内网部署的GitLab是一致的．
-生成SSH key参考GitHub这篇文章　Generating a new SSH key and adding it to the ssh-agent - User Documentation1234567891011121314151617181920212223go">
-<meta property="og:updated_time" content="2016-09-20T11:05:55.653Z">
+<meta property="og:description" content="阿里云Code">
+<meta property="og:updated_time" content="2016-09-20T12:54:26.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云code配置ssh">
-<meta name="twitter:description" content="今天无意在网络上发现了阿里云Code，这是在GitLab进行再开发的，所以一些使用体验和内网部署的GitLab是一致的．
-生成SSH key参考GitHub这篇文章　Generating a new SSH key and adding it to the ssh-agent - User Documentation1234567891011121314151617181920212223go">
+<meta name="twitter:description" content="阿里云Code">
   
     <link rel="alternate" href="/atom.xml" title="Kimown&#39;s Blog" type="application/atom+xml">
   
@@ -55,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kimown.github.io"></form>
@@ -88,7 +85,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-         <a id="more"></a>
+        <p> <a href="https://code.aliyun.com/" target="_blank" rel="external">阿里云Code</a><br> <a id="more"></a></p>
 <p>今天无意在网络上发现了<a href="https://code.aliyun.com/users/sign_in" target="_blank" rel="external">阿里云Code</a>，这是在<a href="https://about.gitlab.com/" target="_blank" rel="external">GitLab</a>进行再开发的，所以一些使用体验和内网部署的GitLab是一致的．</p>
 <h2 id="生成SSH-key"><a href="#生成SSH-key" class="headerlink" title="生成SSH key"></a>生成SSH key</h2><p>参考GitHub这篇文章　<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key and adding it to the ssh-agent - User Documentation</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">google@H:~/.ssh$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/google/.ssh/id_rsa): id_rsa_code_aliyun</div><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved <span class="keyword">in</span> id_rsa_code_aliyun.</div><div class="line">Your public key has been saved <span class="keyword">in</span> id_rsa_code_aliyun.pub.</div><div class="line">The key fingerprint is:</div><div class="line">ff:af:52:d0:e8:23:4f:84:40:ae:5e:44:6a:cb:a7:0c your_email@example.com</div><div class="line">The key<span class="string">'s randomart image is:</span></div><div class="line">+--[ RSA 4096]----+</div><div class="line">|     .o          |</div><div class="line">|     +.          |</div><div class="line">|    o o. . o     |</div><div class="line">|   o +  . + .    |</div><div class="line">|  E + o So .     |</div><div class="line">|   + +  ..+ .    |</div><div class="line">|    +    +.o     |</div><div class="line">|          o.     |</div><div class="line">|           .oo.  |</div><div class="line">+-----------------+</div><div class="line">google@H:~/.ssh$ ls id_rsa_code_aliyun* -a</div><div class="line">id_rsa_code_aliyun  id_rsa_code_aliyun.pub</div></pre></td></tr></table></figure></p>
 <p>id_rsa_code_aliyun是SSH中的私钥，id_rsa_code_aliyun.pub则是SSH中对应的公钥，我们要把公钥的内容发布出去，自己保留私钥就可以了．</p>
@@ -104,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/09/20/阿里云code配置ssh/" data-id="citbc71l30019sw31lm0xw25w" class="article-share-link">Compartir</a>
+      <a data-url="https://kimown.github.io/2016/09/20/阿里云code配置ssh/" data-id="citbhgi3t001htd31oifocdy2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -117,7 +114,7 @@
   
   
     <a href="/2016/09/18/Hangman代码整体思路/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hangman代码整体思路</div>
     </a>
   
@@ -145,7 +142,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Life/" style="font-size: 17.5px;">Life</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/译/" style="font-size: 12.5px;">译</a>
     </div>
@@ -154,7 +151,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
     </div>
@@ -164,7 +161,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -201,7 +198,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 kimown<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

@@ -5,22 +5,16 @@
   
   <title>Hangman代码整体思路 | Kimown&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目地址是这里,大意是通过一个RESTful接口进行猜词．
-这里我对当前最新的commit进行分析，以后的代码结构有可能会变化
-代码思路使用一个单词字典，首先根据长度过滤单词，找到出现频率(一个单词内重复字符只计数一次)最高的字符，如果字符猜测正确，根据已知的字符过滤下单词字典，如果字符猜测错误，排除掉所有含有错误字符的单词， 然后重新统计单词字典中字符的频率,如果发送次数大于20次，下一个单词">
+  <meta name="description" content="题目地址是这里,大意是通过一个RESTful接口进行猜词．">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hangman代码整体思路">
 <meta property="og:url" content="https://kimown.github.io/2016/09/18/Hangman代码整体思路/index.html">
 <meta property="og:site_name" content="Kimown's Blog">
-<meta property="og:description" content="题目地址是这里,大意是通过一个RESTful接口进行猜词．
-这里我对当前最新的commit进行分析，以后的代码结构有可能会变化
-代码思路使用一个单词字典，首先根据长度过滤单词，找到出现频率(一个单词内重复字符只计数一次)最高的字符，如果字符猜测正确，根据已知的字符过滤下单词字典，如果字符猜测错误，排除掉所有含有错误字符的单词， 然后重新统计单词字典中字符的频率,如果发送次数大于20次，下一个单词">
-<meta property="og:updated_time" content="2016-09-20T12:49:55.629Z">
+<meta property="og:description" content="题目地址是这里,大意是通过一个RESTful接口进行猜词．">
+<meta property="og:updated_time" content="2016-09-20T12:54:48.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hangman代码整体思路">
-<meta name="twitter:description" content="题目地址是这里,大意是通过一个RESTful接口进行猜词．
-这里我对当前最新的commit进行分析，以后的代码结构有可能会变化
-代码思路使用一个单词字典，首先根据长度过滤单词，找到出现频率(一个单词内重复字符只计数一次)最高的字符，如果字符猜测正确，根据已知的字符过滤下单词字典，如果字符猜测错误，排除掉所有含有错误字符的单词， 然后重新统计单词字典中字符的频率,如果发送次数大于20次，下一个单词">
+<meta name="twitter:description" content="题目地址是这里,大意是通过一个RESTful接口进行猜词．">
   
     <link rel="alternate" href="/atom.xml" title="Kimown&#39;s Blog" type="application/atom+xml">
   
@@ -58,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kimown.github.io"></form>
@@ -92,6 +86,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> 题目地址是<a href="https://github.com/strikingly/strikingly-interview-test-instructions" target="_blank" rel="external">这里</a>,大意是通过一个RESTful接口进行猜词．</p>
+  <a id="more"></a>
 <p>这里我对<a href="https://github.com/kimown/gist/tree/0aa59b271110e792bfd34fe8e6ee8a60eae3792a/hangman-game" target="_blank" rel="external">当前最新的commit进行分析</a>，以后的代码结构有可能会变化</p>
 <h2 id="代码思路"><a href="#代码思路" class="headerlink" title="代码思路"></a>代码思路</h2><p>使用一个单词字典，首先根据长度过滤单词，找到出现频率(一个单词内重复字符只计数一次)最高的字符，如果字符猜测正确，根据已知的字符过滤下单词字典，如果字符猜测错误，排除掉所有含有错误字符的单词， 然后重新统计单词字典中字符的频率,如果发送次数大于20次，下一个单词；如果错误次数超过限定值，下一个单词.</p>
 <h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h2><ul>
@@ -114,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kimown.github.io/2016/09/18/Hangman代码整体思路/" data-id="citbdgbpb00005r31oitovwpb" class="article-share-link">Compartir</a>
+      <a data-url="https://kimown.github.io/2016/09/18/Hangman代码整体思路/" data-id="citbhgi2b0003td3144gxeytr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -126,7 +121,7 @@
 <nav id="article-nav">
   
     <a href="/2016/09/20/阿里云code配置ssh/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Nuevo</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           阿里云code配置ssh
@@ -136,7 +131,7 @@
   
   
     <a href="/2016/09/18/使用jigdo下载ubuntu镜像/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">使用jigdo下载ubuntu镜像</div>
     </a>
   
@@ -164,7 +159,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Life/" style="font-size: 17.5px;">Life</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/React/" style="font-size: 12.5px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/译/" style="font-size: 12.5px;">译</a>
     </div>
@@ -173,7 +168,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
     </div>
@@ -183,7 +178,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -220,7 +215,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 kimown<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
